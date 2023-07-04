@@ -3,15 +3,16 @@ package com.hansi.ecommercespringbootmicroservices.productcatalogservice.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
+import org.springframework.validation.annotation.Validated;
 
 import java.math.BigDecimal;
-import org.springframework.validation.annotation.Validated;
 
 @Entity
 @Table(name = "products")
 @Validated
 @RequiredArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Getter
 @Setter
