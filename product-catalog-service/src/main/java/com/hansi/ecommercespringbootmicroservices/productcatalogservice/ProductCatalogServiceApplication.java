@@ -10,8 +10,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("com.hansi.ecommercespringbootmicroservices.productcatalogservice.model")
 public class ProductCatalogServiceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ProductCatalogServiceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ProductCatalogServiceApplication.class, args);
+    }
 
 }

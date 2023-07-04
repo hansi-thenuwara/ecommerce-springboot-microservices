@@ -1,6 +1,9 @@
 # E-commerce Project with Spring Boot and Microservices
 
-This GitHub repository contains an e-commerce project built with Spring Boot and microservices. The project aims to cover various aspects of developing an e-commerce application, including product catalog management, shopping cart functionality, user authentication, order management, and more. Additionally, the project incorporates cloud technologies for deployment, scalability, and integration with cloud-based services. 
+This GitHub repository contains an e-commerce project built with Spring Boot and microservices. The project aims to
+cover various aspects of developing an e-commerce application, including product catalog management, shopping cart
+functionality, user authentication, order management, and more. Additionally, the project incorporates cloud
+technologies for deployment, scalability, and integration with cloud-based services.
 
 ## Features
 
@@ -40,13 +43,15 @@ To run this e-commerce application locally, follow these steps:
 
 ## Contributing
 
-Contributions to this e-commerce project are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request. Let's collaborate and make this project even better!
+Contributions to this e-commerce project are welcome! If you find any bugs or have suggestions for improvements, please
+open an issue or submit a pull request. Let's collaborate and make this project even better!
 
 ## License
 
 This project is licensed under the MIT License.
 
 ## Acknowledgements
+
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
 - [Spring Security](https://spring.io/projects/spring-security)
