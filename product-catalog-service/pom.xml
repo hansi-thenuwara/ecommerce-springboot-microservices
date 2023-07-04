@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.hansi</groupId>
+        <artifactId>ecommerce-springboot-microservices</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hansi.productcatalogservice</groupId>
+    <artifactId>product-catalog-service</artifactId>
+    <version>1.0.0</version>
+    <name>Product Catalog Service</name>
+    <description>Microservice for managing the product catalog in the e-commerce application</description>
+
+    <!-- Add necessary dependencies, configurations, and plugins for the Product Catalog Service -->
+    <!-- You can reference the previously provided pom.xml for the specific dependencies you need -->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.hansi.ecommercespringbootmicroservices.productcatalogservice.ProductCatalogServiceApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
