@@ -1,4 +1,4 @@
-package com.hansi.ecommercespringbootmicroservices;
+package com.hansi.ecommercespringbootmicroservices.parentservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

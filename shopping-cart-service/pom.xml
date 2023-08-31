@@ -8,11 +8,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.hansi.productcatalogservice</groupId>
-    <artifactId>product-catalog-service</artifactId>
+    <groupId>com.hansi.shoppingcartservice</groupId>
+    <artifactId>shopping-cart-service</artifactId>
     <version>1.0.0</version>
-    <name>Product Catalog Service</name>
-    <description>Microservice for managing the product catalog in the e-commerce application</description>
+    <name>Shopping Cart Service</name>
+    <description>Microservice for managing the shopping cart in the e-commerce application</description>
 
     <!-- Add necessary dependencies, configurations, and plugins for the Product Catalog Service -->
     <!-- You can reference the previously provided pom.xml for the specific dependencies you need -->
@@ -23,7 +23,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.hansi.ecommercespringbootmicroservices.productcatalogservice.ProductCatalogServiceApplication</mainClass>
+                    <mainClass>
+                        com.hansi.ecommercespringbootmicroservices.shoppingcartservice.ShoppingCartServiceApplication
+                    </mainClass>
                 </configuration>
             </plugin>
         </plugins>

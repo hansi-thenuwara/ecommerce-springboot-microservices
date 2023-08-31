@@ -1,8 +1,8 @@
 package com.hansi.ecommercespringbootmicroservices.productcatalogservice.service;
 
 import com.hansi.ecommercespringbootmicroservices.productcatalogservice.exceptions.ProductNotFoundException;
-import com.hansi.ecommercespringbootmicroservices.productcatalogservice.model.Product;
 import com.hansi.ecommercespringbootmicroservices.productcatalogservice.repository.ProductRepository;
+import com.hansi.ecommercespringbootmicroservices.productcatalogservice.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
