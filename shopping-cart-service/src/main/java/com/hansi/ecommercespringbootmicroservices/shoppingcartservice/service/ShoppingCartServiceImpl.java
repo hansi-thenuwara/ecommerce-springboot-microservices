@@ -35,11 +35,11 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public CartItem addItemToCart(
-            @NotNull Long cartId,
-            @NotNull Long productId,
-            @NotBlank String productName,
-            @Positive int quantity,
-            @PositiveOrZero BigDecimal pricePerItem) {
+            Long cartId,
+            Long productId,
+            String productName,
+            int quantity,
+            BigDecimal pricePerItem) {
 
         ShoppingCart shoppingCart = shoppingCartRepository.findById(cartId)
                 .orElseThrow(() -> new ShoppingCartNotFoundException("Shopping Cart not found with id " + cartId));

@@ -1,5 +1,7 @@
 package com.hansi.ecommercespringbootmicroservices.shoppingcartservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -38,6 +40,7 @@ public class CartItem {
     @Positive(message = "Price must be a positive number")
     private BigDecimal pricePerItem;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "shopping_cart_id")
     private ShoppingCart shoppingCart;

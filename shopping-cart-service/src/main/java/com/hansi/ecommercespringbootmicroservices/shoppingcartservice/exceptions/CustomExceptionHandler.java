@@ -1,4 +1,4 @@
-package com.hansi.ecommercespringbootmicroservices.productcatalogservice.exceptions;
+package com.hansi.ecommercespringbootmicroservices.shoppingcartservice.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

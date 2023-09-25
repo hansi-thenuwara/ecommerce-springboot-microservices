@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 @Validated
 @RequiredArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Getter
 @Setter
