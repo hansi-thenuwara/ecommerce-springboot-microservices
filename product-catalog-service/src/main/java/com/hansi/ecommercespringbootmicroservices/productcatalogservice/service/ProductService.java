@@ -14,4 +14,6 @@ public interface ProductService {
     boolean deleteProduct(Long id);
 
     List<Product> list();
+
+    void updateProductQuantity(Long productId, int quantityChange);
 }

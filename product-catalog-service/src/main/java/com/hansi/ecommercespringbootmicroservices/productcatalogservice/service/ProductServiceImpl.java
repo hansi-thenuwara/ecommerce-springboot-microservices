@@ -1,8 +1,10 @@
 package com.hansi.ecommercespringbootmicroservices.productcatalogservice.service;
 
+import com.hansi.ecommercespringbootmicroservices.productcatalogservice.exceptions.InvalidProductQuantityException;
 import com.hansi.ecommercespringbootmicroservices.productcatalogservice.exceptions.ProductNotFoundException;
-import com.hansi.ecommercespringbootmicroservices.productcatalogservice.repository.ProductRepository;
 import com.hansi.ecommercespringbootmicroservices.productcatalogservice.model.Product;
+import com.hansi.ecommercespringbootmicroservices.productcatalogservice.repository.ProductRepository;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +18,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     ProductRepository productRepository;
-
     @Override
     public Product getProductById(Long id) {
         Optional<Product> product = productRepository.findById(id);
@@ -53,5 +54,20 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> list() {
         return productRepository.findAll();
+    }
+
+    @Override
+    public void updateProductQuantity(Long productId, int quantityChange) {
+
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new ProductNotFoundException("Product not found"));
+
+        if (product.getQuantity() + quantityChange < 0 ) {
+            throw new InvalidProductQuantityException("Invalid product quantity change.");
+        }
+
+        product.setQuantity(product.getQuantity() + quantityChange);
+
+        productRepository.save(product);
     }
 }

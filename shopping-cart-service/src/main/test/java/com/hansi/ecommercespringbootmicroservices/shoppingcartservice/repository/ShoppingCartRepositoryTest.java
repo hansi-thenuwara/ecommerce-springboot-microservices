@@ -1,18 +1,12 @@
 package com.hansi.ecommercespringbootmicroservices.shoppingcartservice.repository;
 
-import com.hansi.ecommercespringbootmicroservices.productcatalogservice.model.Product;
+import com.hansi.ecommercespringbootmicroservices.shoppingcartservice.model.ShoppingCart;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.util.Assert;
-import shoppingcartservice.ShoppingCart;
-import om.hansi.ecommercespringbootmicroservices.shoppingcartservice.repository.ShoppingCartRepository;
-
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 @DataJpaTest
 @Rollback(value = false)

@@ -1,5 +1,6 @@
 package com.hansi.ecommercespringbootmicroservices.productcatalogservice.controller;
 
+import com.hansi.ecommercespringbootmicroservices.productcatalogservice.exceptions.InvalidProductQuantityException;
 import com.hansi.ecommercespringbootmicroservices.productcatalogservice.exceptions.ProductNotFoundException;
 import com.hansi.ecommercespringbootmicroservices.productcatalogservice.model.Product;
 import com.hansi.ecommercespringbootmicroservices.productcatalogservice.service.ProductService;
@@ -7,8 +8,6 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
@@ -64,17 +63,20 @@ public class ProductController {
         return ResponseEntity.ok(productService.list());
     }
 
-    @ExceptionHandler(ProductNotFoundException.class)
-    public ResponseEntity<Object> handleProductNotFoundException(ProductNotFoundException ex) {
-        Map<String, Object> errorBody = new LinkedHashMap<>();
-        errorBody.put("message", ex.getMessage());
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorBody);
-    }
+    @PutMapping("/{productId}/update-quantity")
+    public ResponseEntity<String> updateProductQuantity(
+            @PathVariable Long productId,
+            @RequestParam int quantityChange) {
 
-    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
-    public ResponseEntity<Object> handleInvalidRequestException(MethodArgumentTypeMismatchException ex) {
-        Map<String, Object> errorBody = new LinkedHashMap<>();
-        errorBody.put("message", "Invalid method arguments");
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorBody);
+        try {
+            productService.updateProductQuantity(productId, quantityChange);
+            return ResponseEntity.ok("Product quantity updated successfully.");
+        } catch (ProductNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Product not found.");
+        } catch (InvalidProductQuantityException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Invalid product quantity change.");
+        }
     }
 }

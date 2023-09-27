@@ -25,4 +25,18 @@ public class CustomExceptionHandler {
 
         return new ResponseEntity<>(errorMessage.toString(), HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(ShoppingCartNotFoundException.class)
+    public ResponseEntity<String> handleShoppingCartNotFoundException(ShoppingCartNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+
+    @ExceptionHandler(CartItemNotFoundException.class)
+    public ResponseEntity<String> handleCartItemNotFoundException(CartItemNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+    @ExceptionHandler(ProductUpdateException.class)
+    public ResponseEntity<String> handleProductUpdateException(ProductUpdateException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
 }
